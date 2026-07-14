@@ -2,6 +2,7 @@ import ParallaxHero from "@/components/ParallaxHero";
 import GlassCard from "@/components/GlassCard";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import FloatingGeometries from "@/components/FloatingGeometries";
+import MouseTrackingParallax from "@/components/MouseTrackingParallax";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import ProductCard from "@/components/ProductCard";
@@ -37,15 +38,17 @@ export default async function HomePage() {
             },
           ].map((step, i) => (
             <RevealOnScroll key={step.title} delay={i * 120}>
-              <GlassCard>
-                <span className="font-display text-xs text-[var(--accent-2)]">
-                  0{i + 1}
-                </span>
-                <h3 className="font-bubble text-xl mt-2 mb-1">{step.title}</h3>
-                <p className="text-[var(--text-dim)] font-data text-sm">
-                  {step.body}
-                </p>
-              </GlassCard>
+              <MouseTrackingParallax intensity={0.8}>
+                <GlassCard>
+                  <span className="font-display text-xs text-[var(--accent-2)]">
+                    0{i + 1}
+                  </span>
+                  <h3 className="font-bubble text-xl mt-2 mb-1">{step.title}</h3>
+                  <p className="text-[var(--text-dim)] font-data text-sm">
+                    {step.body}
+                  </p>
+                </GlassCard>
+              </MouseTrackingParallax>
             </RevealOnScroll>
           ))}
         </div>

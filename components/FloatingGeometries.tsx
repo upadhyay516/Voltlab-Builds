@@ -12,12 +12,12 @@ export default function FloatingGeometries({
   className?: string;
 }) {
   const shapes = [
-    { type: "hexagon", top: "8%", left: "4%", size: 90, color: "var(--accent)", opacity: 0.15 },
-    { type: "circle", top: "18%", right: "6%", size: 64, color: "var(--accent-2)", opacity: 0.2 },
-    { type: "square", top: "55%", left: "9%", size: 48, color: "var(--accent-3)", opacity: 0.18 },
-    { type: "hexagon", bottom: "12%", right: "10%", size: 110, color: "var(--accent)", opacity: 0.12 },
-    { type: "circle", bottom: "30%", left: "7%", size: 56, color: "var(--accent-2)", opacity: 0.18 },
-    { type: "square", top: "70%", right: "14%", size: 40, color: "var(--accent-3)", opacity: 0.16 },
+    { type: "hexagon", top: "8%", left: "4%", size: 90, color: "var(--accent)", opacity: 0.35 },
+    { type: "circle", top: "18%", right: "6%", size: 64, color: "var(--accent-2)", opacity: 0.4 },
+    { type: "square", top: "55%", left: "9%", size: 48, color: "var(--accent-3)", opacity: 0.38 },
+    { type: "hexagon", bottom: "12%", right: "10%", size: 110, color: "var(--accent)", opacity: 0.28 },
+    { type: "circle", bottom: "30%", left: "7%", size: 56, color: "var(--accent-2)", opacity: 0.38 },
+    { type: "square", top: "70%", right: "14%", size: 40, color: "var(--accent-3)", opacity: 0.32 },
   ];
 
   return (
@@ -46,11 +46,11 @@ export default function FloatingGeometries({
           return (
             <div
               key={i}
-              style={{ ...base, border: `2px solid ${s.color}`, borderRadius: "50%" }}
+              style={{ ...base, border: `3px solid ${s.color}`, borderRadius: "50%" }}
             />
           );
         }
-        return <div key={i} style={{ ...base, border: `2px solid ${s.color}` }} />;
+        return <div key={i} style={{ ...base, border: `3px solid ${s.color}` }} />;
       })}
     </div>
   );

@@ -33,17 +33,17 @@ export default function ParallaxHero() {
   }, []);
 
   // Fixed set of star positions so they don't reshuffle on every re-render
-  const stars = Array.from({ length: 40 }).map((_, i) => ({
+  const stars = Array.from({ length: 50 }).map((_, i) => ({
     left: `${(i * 37) % 100}%`,
     top: `${(i * 53) % 100}%`,
-    size: 1 + ((i * 7) % 3),
+    size: 2 + ((i * 7) % 3),
     delay: (i % 5) * 0.4,
   }));
 
   return (
     <section className="relative h-[92vh] min-h-[560px] overflow-hidden flex items-center justify-center">
       {/* Layer 0 — ultra-far: starfield */}
-      <div ref={starRef} className="absolute inset-0 opacity-50" style={{ willChange: "transform" }} aria-hidden>
+      <div ref={starRef} className="absolute inset-0" style={{ willChange: "transform" }} aria-hidden>
         <div className="starfield">
           {stars.map((s, i) => (
             <div
@@ -72,19 +72,19 @@ export default function ParallaxHero() {
       {/* Layer 2 — geometric shapes */}
       <div ref={geoRef} className="absolute inset-0" style={{ willChange: "transform" }} aria-hidden>
         <div
-          className="geometric-hexagon absolute top-[12%] left-[6%] w-24 h-24 opacity-10"
+          className="geometric-hexagon absolute top-[12%] left-[6%] w-24 h-24 opacity-25"
           style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-2))" }}
         />
         <div
-          className="absolute top-[18%] right-[8%] w-20 h-20 rounded-full opacity-15"
-          style={{ border: "2px solid var(--accent)" }}
+          className="absolute top-[18%] right-[8%] w-20 h-20 rounded-full opacity-30"
+          style={{ border: "3px solid var(--accent)" }}
         />
         <div
-          className="absolute top-1/2 left-[10%] w-16 h-16 opacity-12"
-          style={{ border: "2px solid var(--accent-2)", transform: "translateY(-50%)" }}
+          className="absolute top-1/2 left-[10%] w-16 h-16 opacity-25"
+          style={{ border: "3px solid var(--accent-2)", transform: "translateY(-50%)" }}
         />
         <div
-          className="geometric-hexagon absolute bottom-[15%] right-[12%] w-32 h-32 opacity-[0.08]"
+          className="geometric-hexagon absolute bottom-[15%] right-[12%] w-32 h-32 opacity-20"
           style={{ background: "linear-gradient(135deg, var(--accent-3), var(--accent))" }}
         />
       </div>
